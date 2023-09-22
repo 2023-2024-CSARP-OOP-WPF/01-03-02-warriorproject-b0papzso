@@ -8,21 +8,21 @@ namespace WarriorProject
 {
     public class Position
     {
-        private int x; 
-        private int y;
+        private int _x;
+        private int _y;
 
-        public int X {get { return x;} set { } }
-        public int Y { get { return y;} set { } }
+        public int X { get {return _x; } set { _x = value; } }
+        public int Y { get { return _y; } set { _y = value; } }
 
         public Position(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this._x = x;
+            this._y = y;
         }
 
         public void ToConsole()
         {
-            Console.WriteLine("(" + x + ", " + y + ")");
+            Console.WriteLine("(" + _x + ", " + _y + ")");
         }
     }
 
@@ -31,7 +31,7 @@ namespace WarriorProject
         private string name;
         private Position position;
 
-        public Position Position { get { return position; } set { } }
+        public Position Position { get => position; }
 
         public Warrior(string name, Position position)
         {
@@ -41,7 +41,7 @@ namespace WarriorProject
 
         public void MoveHorizontal(int hossz)
         {
-            this.position.X += hossz;
+            position.X += hossz;
         }
         public void MoveVertical(int hossz)
         {
